@@ -25,9 +25,9 @@ app/bots/
 
 `bot.py` 또는 `bot.md`가 없으면 로더는 해당 폴더의 `bot.py` 경로를 `chatbot_module_files`에 failed로 기록한다.
 
-## Marketplace zip 패키지 계약
+## 봇 zip 패키지 계약
 
-마켓플레이스와 Termux 설치 API에서 주고받는 패키지는 zip으로 고정한다.
+봇 배포와 설치 도구에서 주고받는 패키지는 zip으로 고정한다.
 
 필수 파일:
 
@@ -62,13 +62,11 @@ app/bots/
 | 인코딩 | JSON, Python, Markdown은 UTF-8 |
 | 코드 검증 | `ast.parse` syntax 검증까지만 수행 |
 | 무결성 | 업로드/다운로드 응답에서 package sha256 기록 |
-| 압축 크기 | `MARKETPLACE_MAX_PACKAGE_BYTES` 초과 거부 |
-| 파일 수 | `MARKETPLACE_MAX_PACKAGE_FILES` 초과 거부 |
-| 압축 해제 총량 | `MARKETPLACE_MAX_PACKAGE_UNCOMPRESSED_BYTES` 초과 거부 |
+| 압축 크기 | 배포 도구가 정한 최대 크기를 초과하면 거부 |
+| 파일 수 | 배포 도구가 정한 최대 파일 수를 초과하면 거부 |
+| 압축 해제 총량 | 배포 도구가 정한 최대 압축 해제 크기를 초과하면 거부 |
 
-마켓플레이스 서버는 사용자 봇 코드를 실행하지 않는다. 실제 실행 가능 여부는 Termux 백엔드 설치 후 `/chatbot/reload` 결과와 로더 상태로 판단한다.
-마켓플레이스에 업로드한 신규 배포와 재배포는 저장 직후 `ACTIVE`가 되며, `public` 봇은 public catalog와 download에 즉시 노출된다.
-직접 URL 접근은 `ACTIVE` 버전만 허용하고 그 외 버전은 404로 처리한다.
+봇 ZIP은 코드 저장 형식일 뿐이고, 실제 실행 가능 여부는 Termux 백엔드에 설치한 뒤 `/chatbot/reload` 결과와 로더 상태로 판단한다.
 
 ## `bot.py` 계약
 

@@ -14,7 +14,7 @@
 ## 봇 작성 방법
 
 - 전체 문서 목차: [docs/bot/index.md](docs/bot/index.md)
-- 가장 빠른 시작: [docs/bot/quickstart.md](docs/bot/quickstart.md)
+- 빠른 설치: [README.md](README.md)
 - 봇 패키지 구조: [docs/bot/package-structure.md](docs/bot/package-structure.md)
 - 런타임과 생명주기: [docs/bot/runtime-lifecycle.md](docs/bot/runtime-lifecycle.md)
 - 운영과 Hot Reload: [docs/bot/operations.md](docs/bot/operations.md)

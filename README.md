@@ -17,20 +17,17 @@ KakaoTalk X Termux는 카카오톡 알림 기반 자동 응답 흐름을 검증�
 | `scripts/` | Termux 최초 설치, 서버 실행, 부팅 자동화 스크립트 |
 | `app-apk/` | 브릿지앱, Termux, Termux:API APK |
 
-## 빠른 시작
+## 빠른 설치
 
-1. `README.md`와 `AGENTS.md`를 먼저 읽습니다.
-2. `docs/bot/index.md`에서 봇 작성 문서를 확인합니다.
-3. Termux에 `kakao-termux-back-public/`를 복사한 뒤 `./scripts/install_termux_requirements.sh`를 실행합니다.
-4. `./scripts/run_termux_server.sh`로 백엔드를 기동합니다.
-5. 브릿지앱 APK를 설치하고 백엔드 URL을 `http://127.0.0.1:8787`로 맞춥니다.
+1. 저장소를 clone 합니다.
+2. `./scripts/install_termux_requirements.sh`를 실행합니다.
+3. `./scripts/check_termux_runtime.sh`로 헬스체크를 확인합니다.
 
 ## 봇 문서
 
 봇을 만들거나 수정할 때는 아래 문서를 순서대로 보면 됩니다.
 
 - [문서 인덱스](docs/bot/index.md)
-- [빠른 시작](docs/bot/quickstart.md)
 - [패키지 구조](docs/bot/package-structure.md)
 - [런타임과 생명주기](docs/bot/runtime-lifecycle.md)
 - [운영과 Hot Reload](docs/bot/operations.md)
