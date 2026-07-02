@@ -19,9 +19,17 @@ KakaoTalk X Termux는 카카오톡 알림 기반 자동 응답 흐름을 검증�
 
 ## 빠른 설치
 
+```bash
+git clone https://github.com/dextune/kakao-x-termux.git
+cd kakao-x-termux
+./scripts/install_termux_requirements.sh
+./scripts/run_termux_server.sh
+./scripts/check_termux_runtime.sh
+```
+
 1. 저장소를 clone 합니다.
-2. `./scripts/install_termux_requirements.sh`를 실행합니다.
-3. `./scripts/check_termux_runtime.sh`로 헬스체크를 확인합니다.
+2. 설치 스크립트를 실행합니다.
+3. 서버를 띄운 뒤 헬스체크를 확인합니다.
 
 ## 봇 문서
 
