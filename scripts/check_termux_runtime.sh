@@ -20,6 +20,7 @@ check_command python
 check_command pip
 check_command sqlite3
 check_command git
+check_command git-lfs
 check_command curl
 check_command ssh
 check_command am

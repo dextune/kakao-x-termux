@@ -130,9 +130,15 @@ fi
 ensure_termux_package python python
 ensure_termux_package sqlite3 sqlite
 ensure_termux_package git git
+ensure_termux_package git-lfs git-lfs
 ensure_termux_package curl curl
 ensure_termux_package ssh openssh
 ensure_termux_package termux-wake-lock termux-api
+
+if command -v git-lfs >/dev/null 2>&1; then
+  git lfs install --local
+  git lfs pull
+fi
 
 mkdir -p data/logs
 
