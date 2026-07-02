@@ -173,11 +173,7 @@ copy_bundled_termux_installers() {
 
   mkdir -p "${download_dir}"
 
-  for artifact in \
-    "${source_dir}/com.termux_1022.z01" \
-    "${source_dir}/com.termux_1022.zip" \
-    "${source_dir}/com.termux.api_1002.apk"
-  do
+  for artifact in "${source_dir}"/com.termux_1022.z* "${source_dir}/com.termux_1022.zip" "${source_dir}/com.termux.api_1002.apk"; do
     if [ -f "${artifact}" ]; then
       cp -f "${artifact}" "${download_dir}/"
       printf 'INFO copied installer artifact to downloads: %s\n' "${artifact}"

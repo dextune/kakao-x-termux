@@ -5,13 +5,15 @@
 </p>
 
 <p align="center">
-  <img src="./assets/kakao-talk-x-termux-flow.svg" alt="KakaoTalk X Termux workflow" width="100%" />
+  <img src="./assets/kakao-talk-x-termux-flow.png" alt="KakaoTalk X Termux workflow" width="100%" />
 </p>
 
 KakaoTalk X Termux는 카카오톡 알림 기반 자동 응답 흐름을 검증하고 운영하기 위한 공개 배포본입니다.
 이 저장소는 Android 브릿지앱, Termux 백엔드, 공개 봇 문서를 한 묶음으로 제공합니다.
 
 ## 빠른 설치
+
+아래 명령은 Termux 설치가 끝난 뒤, Termux 앱 안에서 실행한다.
 
 ```bash
 git clone https://github.com/dextune/kakao-x-termux.git
@@ -21,27 +23,39 @@ cd kakao-x-termux
 ./scripts/check_termux_runtime.sh
 ```
 
-1. GitHub 저장소를 clone 한다.
-2. Termux 안에서 `./scripts/install_termux_requirements.sh`를 실행한다.
-3. `./scripts/run_termux_server.sh`로 백엔드를 띄운다.
-4. `./scripts/check_termux_runtime.sh`로 상태를 확인한다.
+1. Termux를 먼저 설치하고 실행한다.
+2. Termux 안에서 GitHub 저장소를 clone 한다.
+3. `./scripts/install_termux_requirements.sh`로 Python, SQLite, 의존성, APK 복사를 준비한다.
+4. `./scripts/run_termux_server.sh`로 백엔드를 띄운다.
+5. `./scripts/check_termux_runtime.sh`로 상태를 확인한다.
 
-## Android 설치
+## Termux 설치
 
-### 브릿지앱
+백엔드는 Android 앱이 아니라 Termux 안에서 실행되는 Python/FastAPI 서버다.
+따라서 백엔드 설치 명령을 입력하기 전에 Termux가 먼저 설치되어 있어야 한다.
 
-1. `app-apk/kakao-bridge-app-debug.apk`를 설치한다.
-2. Android 설정에서 브릿지앱 알림 권한을 켠다.
-3. Android 설정에서 브릿지앱을 배터리 최적화 예외로 둔다.
-
-### Termux
-
-1. `app-apk/com.termux_1022.z01`과 `app-apk/com.termux_1022.zip`을 같은 폴더에 둔다.
-2. 압축을 풀어 `com.termux_1022.apk`를 꺼낸다.
-3. 꺼낸 `com.termux_1022.apk`를 설치한다.
-4. 필요하면 `app-apk/com.termux.api_1002.apk`도 설치한다.
+1. `app-apk/com.termux_1022.z01`, `app-apk/com.termux_1022.z02`, `app-apk/com.termux_1022.zip`을 같은 폴더에 둔다.
+2. 분할 ZIP을 압축 해제해서 `com.termux_1022.apk`를 꺼낸다.
+3. 꺼낸 `com.termux_1022.apk`를 Android에 설치한다.
+4. Termux를 한 번 실행해서 초기 파일 시스템 생성을 완료한다.
 5. Android 설정에서 Termux 알림 권한을 켠다.
 6. Android 설정에서 Termux를 배터리 최적화 예외로 둔다.
+7. 필요하면 `app-apk/com.termux.api_1002.apk`도 설치한다.
+
+Termux 설치가 끝난 뒤에만 `git clone`, `install_termux_requirements.sh`, `run_termux_server.sh`를 실행할 수 있다.
+
+## 브릿지앱 설치 (Android)
+
+브릿지앱은 카카오톡 알림을 읽고, Termux 백엔드가 만든 응답을 실제 카카오톡 답장으로 보내는 Android 앱이다.
+
+1. `app-apk/kakao-bridge-app-debug.apk`를 Android에 설치한다.
+2. 설치가 막히면 Android 설정에서 현재 APK를 여는 앱의 `알 수 없는 앱 설치` 권한을 허용한다.
+3. Play 스토어의 Play 프로텍트가 설치를 차단하면 Play 스토어 설정에서 Play 프로텍트 검사를 잠시 해제한 뒤 설치한다.
+4. 설치 후에는 Play 프로텍트 검사를 다시 켜는 것을 권장한다.
+5. Android 설정에서 브릿지앱 알림 권한을 켠다.
+6. Android 설정에서 브릿지앱의 알림 접근 권한을 허용한다.
+7. Android 설정에서 브릿지앱을 배터리 최적화 예외로 둔다.
+8. 브릿지앱 설정에서 백엔드 주소가 `http://127.0.0.1:8787`인지 확인한다.
 
 `install_termux_requirements.sh`는 브릿지앱 APK와 Termux 관련 배포 파일을 Download 폴더로 복사해서, 재설치할 때 다시 찾기 쉽게 만든다.
 
