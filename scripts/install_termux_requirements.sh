@@ -162,6 +162,32 @@ copy_bundled_bridge_apk() {
   printf 'INFO copied bridge APK to downloads: %s\n' "${apk_target}"
 }
 
+copy_bundled_termux_installers() {
+  download_dir="${TERMUX_DOWNLOAD_DIR:-${HOME}/storage/downloads}"
+  source_dir="${PROJECT_DIR}/app-apk"
+
+  if [ ! -d "${source_dir}" ]; then
+    printf 'WARN bundled app-apk directory missing: %s\n' "${source_dir}"
+    return 0
+  fi
+
+  mkdir -p "${download_dir}"
+
+  for artifact in \
+    "${source_dir}/com.termux_1022.z01" \
+    "${source_dir}/com.termux_1022.zip" \
+    "${source_dir}/com.termux.api_1002.apk"
+  do
+    if [ -f "${artifact}" ]; then
+      cp -f "${artifact}" "${download_dir}/"
+      printf 'INFO copied installer artifact to downloads: %s\n' "${artifact}"
+    else
+      printf 'WARN bundled installer artifact missing: %s\n' "${artifact}"
+    fi
+  done
+}
+
 copy_bundled_bridge_apk
+copy_bundled_termux_installers
 
 printf 'termux backend requirements ready: %s\n' "${PROJECT_DIR}"

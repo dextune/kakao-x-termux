@@ -9,7 +9,7 @@
 - `app/bots/`: 실제 봇 구현체
 - `docs/bot/`: 공개 봇 작성, 운영, 테스트 문서
 - `scripts/`: Termux bootstrap과 서버 실행 스크립트
-- `app-apk/`: 브릿지앱, Termux, Termux:API APK
+- `app-apk/`: 브릿지앱 APK, Termux split ZIP, Termux:API APK
 
 ## 봇 작성 방법
 
