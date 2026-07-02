@@ -1,0 +1,68 @@
+<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">KakaoTalk X Termux</title>
+  <desc id="desc">Public deployment banner for KakaoTalk X Termux.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10131A"/>
+      <stop offset="0.55" stop-color="#1C2028"/>
+      <stop offset="1" stop-color="#0E1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="180" y1="40" x2="1440" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FEE500"/>
+      <stop offset="0.55" stop-color="#FFC83D"/>
+      <stop offset="1" stop-color="#FF9E2C"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="1100" y1="70" x2="1470" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#151922"/>
+      <stop offset="1" stop-color="#0C1016"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="40" width="1440" height="340" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="420" rx="34" fill="url(#bg)"/>
+  <rect x="32" y="32" width="1536" height="356" rx="28" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+  <g filter="url(#shadow)">
+    <path d="M88 78C88 67.5066 96.5066 59 107 59H920C930.493 59 939 67.5066 939 78V342C939 352.493 930.493 361 920 361H107C96.5066 361 88 352.493 88 342V78Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)"/>
+  </g>
+  <rect x="88" y="59" width="851" height="302" rx="20" fill="rgba(10,12,16,0.82)"/>
+  <rect x="88" y="59" width="851" height="64" rx="20" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="124" cy="91" r="8" fill="#FF5F57"/>
+  <circle cx="151" cy="91" r="8" fill="#FEBC2E"/>
+  <circle cx="178" cy="91" r="8" fill="#28C840"/>
+  <text x="118" y="176" fill="#F7F8FA" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-1.2">KakaoTalk X Termux</text>
+  <text x="118" y="224" fill="#B8C0CC" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="22" font-weight="500">
+    Bridge app + Termux backend + public bot framework
+  </text>
+  <g>
+    <rect x="118" y="250" width="146" height="36" rx="18" fill="rgba(254,229,0,0.14)" stroke="rgba(254,229,0,0.25)"/>
+    <text x="141" y="274" fill="#FEE500" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Android bridge</text>
+    <rect x="276" y="250" width="170" height="36" rx="18" fill="rgba(254,229,0,0.12)" stroke="rgba(254,229,0,0.18)"/>
+    <text x="299" y="274" fill="#F9D46B" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Termux backend</text>
+    <rect x="458" y="250" width="170" height="36" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="484" y="274" fill="#D7DCE5" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Bot docs + scripts</text>
+  </g>
+  <path d="M118 314H880" stroke="rgba(255,255,255,0.07)"/>
+  <text x="118" y="340" fill="#8A93A4" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="16">
+    Public snapshot for GitHub: http://github.com/dextune/kakao-x-termux
+  </text>
+  <g filter="url(#shadow)">
+    <path d="M1018 78C1018 67.5066 1026.51 59 1037 59H1498C1508.49 59 1517 67.5066 1517 78V342C1517 352.493 1508.49 361 1498 361H1037C1026.51 361 1018 352.493 1018 342V78Z" fill="url(#panel)" stroke="rgba(255,255,255,0.09)"/>
+  </g>
+  <rect x="1048" y="86" width="400" height="216" rx="18" fill="#10151C" stroke="rgba(255,255,255,0.08)"/>
+  <text x="1082" y="126" fill="#F7F8FA" font-family="JetBrains Mono, SFMono-Regular, Consolas, monospace" font-size="20" font-weight="700">public/</text>
+  <text x="1082" y="154" fill="#A8B2C1" font-family="JetBrains Mono, SFMono-Regular, Consolas, monospace" font-size="15">
+    <tspan x="1082" dy="0">app/</tspan>
+    <tspan x="1082" dy="24">docs/bot/</tspan>
+    <tspan x="1082" dy="24">scripts/</tspan>
+    <tspan x="1082" dy="24">app-apk/</tspan>
+    <tspan x="1082" dy="24">README.md</tspan>
+    <tspan x="1082" dy="24">AGENTS.md</tspan>
+  </text>
+  <rect x="1048" y="318" width="400" height="24" rx="12" fill="rgba(254,229,0,0.12)"/>
+  <text x="1072" y="335" fill="#FEE500" font-family="Inter, Pretendard, system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Open docs, reproducible deploy, fresh-Termux bootstrap</text>
+  <path d="M1018 340L1498 340" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="1460" cy="126" r="66" fill="rgba(254,229,0,0.08)"/>
+  <circle cx="1460" cy="126" r="42" fill="rgba(254,229,0,0.12)"/>
+  <path d="M1460 96L1473 119L1499 123L1480 141L1484 167L1460 155L1436 167L1440 141L1421 123L1447 119Z" fill="url(#accent)" opacity="0.98"/>
+</svg>
