@@ -16,8 +16,13 @@ KakaoTalk X Termux는 카카오톡 알림 기반 자동 응답 흐름을 검증�
 ## 지원 환경
 
 KakaoTalk X Termux는 Android 기기에서만 동작하는 시스템입니다.
+
+지원 범위는 Android 10부터 Android 15까지입니다.
+
 루팅은 필요하지 않습니다.
+
 백엔드는 Termux 안에서 실행되므로, 빠른 설치 명령을 입력하기 전에 Termux가 먼저 설치되어 있어야 합니다.
+
 Termux가 아직 없다면 [KakaoTalk x Termux 설치방법](INSTALL.md)을 먼저 따라가세요.
 
 ## 빠른 설치

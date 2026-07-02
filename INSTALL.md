@@ -1,7 +1,12 @@
 # KakaoTalk x Termux 설치방법
 
 이 문서는 Android 기기에서 KakaoTalk X Termux를 처음 설치하는 순서를 정리합니다.
-이 시스템은 Android에서만 동작하며 루팅은 필요하지 않습니다.
+
+이 시스템은 Android에서만 동작합니다.
+
+지원 범위는 Android 10부터 Android 15까지입니다.
+
+루팅은 필요하지 않습니다.
 
 ## 전체 설치 흐름
 
