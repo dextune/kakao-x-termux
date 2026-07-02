@@ -138,8 +138,7 @@ flowchart LR
 
 GitHub: http://github.com/dextune/kakao-x-termux
 
-## 주의
+## 라이선스
 
-- 이 배포본은 public snapshot입니다.
-- 민감한 token, 개인 메시지, 전화번호, 내부 호스트 정보는 넣지 않습니다.
-- 실기기 배포 전에는 `DEVICE.md`와 `TEST.md`를 확인합니다.
+이 프로젝트의 사용, 복제, 수정, 재배포 조건은 저장소에 포함된 `LICENSE` 파일을 따릅니다.
+`LICENSE` 파일이 없는 배포본에서는 저작권자의 명시적인 허가 없이 재배포하거나 상업적으로 사용할 수 없습니다.
