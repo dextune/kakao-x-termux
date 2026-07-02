@@ -55,21 +55,60 @@ cd kakao-x-termux
 | `scripts/` | Termux bootstrap, 서버 실행, 점검, 부팅 자동화 스크립트 |
 | `docs/bot/` | 봇 작성, 운영, 테스트에 필요한 공개 문서 |
 
-## 프로젝트 흐름
+## 공식 워크플로우
 
-1. 카카오톡 알림이 들어오면 브릿지앱이 이벤트를 잡는다.
-2. 브릿지앱이 reply token과 방 정보를 정리해 Termux 백엔드로 넘긴다.
-3. Termux 백엔드가 봇 모듈, 룰, 상태를 읽고 응답을 결정한다.
-4. 필요한 경우 reply job을 만들고 브릿지앱이 실제 답장을 전송한다.
-5. 운영자는 `docs/bot/`와 `scripts/`를 기준으로 봇을 추가하거나 점검한다.
+KakaoTalk X Termux는 Android 앱과 Termux 백엔드를 분리해서 운영합니다.
+브릿지앱은 카카오톡 알림과 답장 권한만 다루고, Termux 백엔드는 메시지 판단과 봇 실행만 담당합니다.
+이 구조 덕분에 봇 로직은 Python으로 빠르게 수정할 수 있고, Android 쪽은 알림 수신과 답장 전송이라는 좁은 책임만 유지합니다.
 
-## 세부 정보
+```mermaid
+flowchart LR
+    A[KakaoTalk<br/>메시지 알림] --> B[Bridge App<br/>알림 수신]
+    B --> C[BridgeEvent<br/>방, 발신자, 본문 정규화]
+    C --> D[Termux FastAPI<br/>127.0.0.1:8787]
+    D --> E[Bot Registry<br/>설치된 봇 목록 로드]
+    E --> F[Bot Processor<br/>룰, 상태, 우선순위 처리]
+    F --> G{응답 필요?}
+    G -- 예 --> H[ReplyCommand<br/>답장 작업 생성]
+    H --> I[Bridge App<br/>RemoteInput 답장 전송]
+    I --> J[KakaoTalk<br/>대화방 응답]
+    G -- 아니오 --> K[로그 기록<br/>상태 유지]
+    D --> L[(SQLite DB<br/>data/backend.sqlite3)]
+    F --> L
+```
 
-- 이 저장소는 Android와 Termux의 역할을 분리해서 운영한다.
-- Android 앱은 판단 로직을 가지지 않는다.
-- Python 백엔드는 카카오톡 UI를 직접 제어하지 않는다.
-- 봇은 `app/bots/{kebab-case}/bot.py`와 `bot.md`로 작성한다.
-- 공개 배포본은 운영 보조 봇과 내부 전용 설정을 제외한 상태를 유지한다.
+## 처리 흐름
+
+| 단계 | 처리 주체 | 설명 |
+| --- | --- | --- |
+| 1 | KakaoTalk | 새 메시지가 도착하고 Android 알림이 발생합니다. |
+| 2 | Bridge App | 알림에서 방 이름, 발신자, 본문, reply token을 추출합니다. |
+| 3 | Termux Backend | `/events` 계약으로 이벤트를 받고 봇 처리 파이프라인에 전달합니다. |
+| 4 | Bot Registry | `app/bots/` 아래의 공개 봇 패키지를 로드하고 활성 상태를 확인합니다. |
+| 5 | Bot Processor | 명령형 봇, 상태형 봇, 룰 기반 응답을 순서대로 평가합니다. |
+| 6 | Reply Queue | 응답이 필요한 경우 `ReplyCommand`를 만들고 중복과 실패 상태를 관리합니다. |
+| 7 | Bridge App | Android `RemoteInput`으로 실제 카카오톡 답장을 전송합니다. |
+
+## 운영 모델
+
+| 영역 | 기준 |
+| --- | --- |
+| 실행 위치 | Android 기기 안의 Termux |
+| 백엔드 주소 | 기본값 `http://127.0.0.1:8787` |
+| 데이터 저장 | `data/backend.sqlite3` |
+| DB 보존 | 재설치와 public 최신화 과정에서 `data/`는 배포본에 포함하지 않고 보존합니다. |
+| 봇 위치 | `app/bots/{bot-name}/bot.py` |
+| 봇 문서 | 각 봇은 `bot.md`로 사용법과 설정을 설명합니다. |
+| 설치 파일 | 브릿지앱 APK, Termux split ZIP, Termux:API APK를 `app-apk/`에 둡니다. |
+
+## 설계 원칙
+
+- Android 앱은 판단 로직을 갖지 않고 알림 수신과 답장 전송만 담당합니다.
+- Python 백엔드는 카카오톡 앱을 직접 제어하지 않고 이벤트 처리와 응답 생성만 담당합니다.
+- 봇은 독립 패키지로 작성하며, import 시점에 네트워크 요청이나 DB write 같은 부작용을 만들지 않습니다.
+- public 배포본에는 운영 보조 봇, 내부 호스트 주소, 개인 환경에 의존하는 파일을 포함하지 않습니다.
+- DB 파일은 GitHub 배포본에 포함하지 않으며, 처음 실행할 때 자동으로 생성합니다.
+- 서버 점검은 `./scripts/check_termux_runtime.sh`와 `/health` 응답을 기준으로 합니다.
 
 ## 봇 문서
 
