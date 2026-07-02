@@ -8,11 +8,11 @@
 
 | 유형 | 예시 문서 | 사용 시점 |
 | --- | --- | --- |
-| 명령형 | [bot-example-command.md](bot-example-command.md) | `/lookup 값`처럼 한 번의 명령과 답장으로 끝나는 기능 |
-| 상태형 | [bot-example-stateful.md](bot-example-stateful.md) | 여러 턴으로 입력을 받아 접수, 예약, 설문을 처리하는 기능 |
-| 관찰형 | [bot-example-observer.md](bot-example-observer.md) | 일반 메시지를 관찰하다가 특정 조건에서만 답장하는 기능 |
-| 외부 HTTP | [bot-example-http.md](bot-example-http.md) | 외부 API, 모델 서버, webhook 조회가 필요한 기능 |
-| Termux command | [bot-example-termux-command.md](bot-example-termux-command.md) | Termux:API나 로컬 command를 실행하는 기능 |
+| 명령형 | [example-command-bot.md](example-command-bot.md) | `/lookup 값`처럼 한 번의 명령과 답장으로 끝나는 기능 |
+| 상태형 | [example-stateful-bot.md](example-stateful-bot.md) | 여러 턴으로 입력을 받아 접수, 예약, 설문을 처리하는 기능 |
+| 관찰형 | [example-observer-bot.md](example-observer-bot.md) | 일반 메시지를 관찰하다가 특정 조건에서만 답장하는 기능 |
+| 외부 HTTP | [example-http-bot.md](example-http-bot.md) | 외부 API, 모델 서버, webhook 조회가 필요한 기능 |
+| Termux command | [example-termux-command-bot.md](example-termux-command-bot.md) | Termux:API나 로컬 command를 실행하는 기능 |
 
 ## 1. 폴더 생성
 

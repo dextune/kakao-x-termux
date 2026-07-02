@@ -13,12 +13,12 @@
 
 ## 봇 작성 방법
 
-- 전체 문서 목차: [docs/bot/index.md](docs/bot/index.md)
+- 전체 문서 목차: [docs/bot/overview-index.md](docs/bot/overview-index.md)
 - 빠른 설치: [README.md](README.md)
-- 봇 패키지 구조: [docs/bot/package-structure.md](docs/bot/package-structure.md)
-- 런타임과 생명주기: [docs/bot/runtime-lifecycle.md](docs/bot/runtime-lifecycle.md)
-- 운영과 Hot Reload: [docs/bot/operations.md](docs/bot/operations.md)
-- 테스트 기준: [docs/bot/testing.md](docs/bot/testing.md)
+- 가이드: [docs/bot/guide-quickstart.md](docs/bot/guide-quickstart.md), [docs/bot/guide-operations.md](docs/bot/guide-operations.md), [docs/bot/guide-testing.md](docs/bot/guide-testing.md)
+- 아키텍처: [docs/bot/architecture-package-structure.md](docs/bot/architecture-package-structure.md), [docs/bot/architecture-runtime-lifecycle.md](docs/bot/architecture-runtime-lifecycle.md)
+- 레퍼런스: [docs/bot/reference-api.md](docs/bot/reference-api.md), [docs/bot/reference-matchers.md](docs/bot/reference-matchers.md), [docs/bot/reference-options.md](docs/bot/reference-options.md)
+- 예시: [docs/bot/example-command-bot.md](docs/bot/example-command-bot.md), [docs/bot/example-stateful-bot.md](docs/bot/example-stateful-bot.md)
 
 ## 작업 원칙
 

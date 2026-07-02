@@ -114,11 +114,13 @@ flowchart LR
 
 봇을 만들거나 수정할 때는 아래 문서를 순서대로 보면 됩니다.
 
-- [문서 인덱스](docs/bot/index.md)
-- [패키지 구조](docs/bot/package-structure.md)
-- [런타임과 생명주기](docs/bot/runtime-lifecycle.md)
-- [운영과 Hot Reload](docs/bot/operations.md)
-- [테스트](docs/bot/testing.md)
+| 성격 | 문서 |
+| --- | --- |
+| Overview | [문서 인덱스](docs/bot/overview-index.md) |
+| Guide | [빠른 시작](docs/bot/guide-quickstart.md), [운영과 Hot Reload](docs/bot/guide-operations.md), [테스트](docs/bot/guide-testing.md), [백테스트](docs/bot/guide-backtesting.md) |
+| Architecture | [패키지 구조](docs/bot/architecture-package-structure.md), [런타임과 생명주기](docs/bot/architecture-runtime-lifecycle.md), [상태와 세션](docs/bot/architecture-state-and-sessions.md), [응답과 발송](docs/bot/architecture-replies-and-send.md) |
+| Reference | [봇 API](docs/bot/reference-api.md), [Matcher](docs/bot/reference-matchers.md), [옵션 스키마](docs/bot/reference-options.md) |
+| Example | [명령형](docs/bot/example-command-bot.md), [상태형](docs/bot/example-stateful-bot.md), [관찰형](docs/bot/example-observer-bot.md), [HTTP](docs/bot/example-http-bot.md), [Termux Command](docs/bot/example-termux-command-bot.md) |
 
 ## 이 저장소가 하는 일
 

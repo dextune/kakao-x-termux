@@ -11,7 +11,7 @@ python -m compileall -q app/chatbot app/bots
 python -m pytest
 ```
 
-실제 채팅에 가까운 다중 사용자/다중 방/다중 턴 검증은 [Python 채팅 백테스트](backtesting.md)의 `ChatBacktest` helper를 우선 사용한다. 신규 상태형 봇이나 사용자별 CRUD 봇은 단순 handler 테스트보다 `/events` 경유 백테스트를 먼저 작성한다.
+실제 채팅에 가까운 다중 사용자/다중 방/다중 턴 검증은 [Python 채팅 백테스트](guide-backtesting.md)의 `ChatBacktest` helper를 우선 사용한다. 신규 상태형 봇이나 사용자별 CRUD 봇은 단순 handler 테스트보다 `/events` 경유 백테스트를 먼저 작성한다.
 
 챗봇 관련 빠른 검증:
 
