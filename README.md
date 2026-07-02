@@ -156,5 +156,6 @@ GitHub: http://github.com/dextune/kakao-x-termux
 
 ## 라이선스
 
-현재 이 저장소에는 별도 라이선스 파일이 포함되어 있지 않습니다.
-라이선스가 명시되기 전까지 코드와 배포 파일의 사용, 복제, 수정, 재배포는 저작권자의 허가가 필요합니다.
+현재 이 저장소에는 별도 `LICENSE` 파일이 포함되어 있지 않습니다.
+개인 학습, 수정, 실험, 내부 운영 용도로 자유롭게 사용하셔도 됩니다.
+다만 수정본이나 재배포본을 공개할 때는 원본 출처가 `KakaoTalk X Termux`와 `https://github.com/dextune/kakao-x-termux`임을 함께 밝혀 주세요.
