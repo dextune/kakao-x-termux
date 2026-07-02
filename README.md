@@ -41,6 +41,14 @@ cd kakao-x-termux
 
 전체 순서는 [INSTALL.md](INSTALL.md)에 자세히 정리되어 있습니다.
 
+## 문서 안내
+
+| 문서 | 용도 |
+| --- | --- |
+| [INSTALL.md](INSTALL.md) | Android 10~15 기기에서 Termux, Termux:API, 백엔드, 브릿지앱을 설치하는 전체 절차 |
+| [AGENTS.md](AGENTS.md) | public 배포본의 폴더 구조와 작업 원칙 |
+| [docs/bot/overview-index.md](docs/bot/overview-index.md) | 봇 작성, 운영, 테스트 문서의 전체 목차 |
+
 ## 프로젝트 구성
 
 | 구성 | 역할 |
@@ -128,6 +136,7 @@ flowchart LR
 ## 배포 파일
 
 - `AGENTS.md`: public 전용 작업 안내
+- `INSTALL.md`: Android 전체 설치 가이드
 - `README.md`: GitHub 메인 소개
 - `docs/bot/`: 봇 작성용 공개 문서
 - `app-apk/`: 브릿지앱 APK, Termux split ZIP, Termux:API APK

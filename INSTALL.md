@@ -8,6 +8,14 @@
 
 루팅은 필요하지 않습니다.
 
+## 관련 문서
+
+| 문서 | 용도 |
+| --- | --- |
+| [README.md](README.md) | 프로젝트 소개, 지원 환경, 빠른 설치 명령 |
+| [AGENTS.md](AGENTS.md) | public 배포본의 폴더 구조와 작업 원칙 |
+| [docs/bot/overview-index.md](docs/bot/overview-index.md) | 봇 작성과 운영 문서 목차 |
+
 ## 전체 설치 흐름
 
 1. Termux 설치
@@ -132,3 +140,4 @@ cd ~/kakao-x-termux
 - 브릿지앱에서 봇 목록이 표시되는지 확인합니다.
 - 카카오톡 알림이 실제로 오는 방에서 테스트합니다.
 - 문제가 있으면 Termux에서 `./scripts/check_termux_runtime.sh`를 먼저 실행합니다.
+- 봇을 추가하거나 수정하려면 [docs/bot/overview-index.md](docs/bot/overview-index.md)를 확인합니다.
