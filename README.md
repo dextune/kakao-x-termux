@@ -1,4 +1,6 @@
-# KakaoTalk X Termux
+<p align="center">
+  <img src="./assets/kakao-talk-x-termux-title.svg" alt="KakaoTalk x Termux" width="100%" />
+</p>
 
 <p align="center">
   <img src="./assets/kakao-talk-x-termux.svg" alt="KakaoTalk X Termux" width="100%" />

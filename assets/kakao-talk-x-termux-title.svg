@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="KakaoTalk x Termux">
+  <rect width="1200" height="170" fill="none"/>
+  <text x="600" y="112"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="92"
+        font-weight="800"
+        fill="#3376A0"
+        stroke="#0f172a"
+        stroke-width="2.5"
+        paint-order="stroke fill">
+    KakaoTalk x Termux
+  </text>
+</svg>
