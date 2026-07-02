@@ -27,9 +27,25 @@ cd kakao-x-termux
 ./scripts/check_termux_runtime.sh
 ```
 
-1. 저장소를 clone 합니다.
-2. 설치 스크립트를 실행합니다.
-3. 서버를 띄운 뒤 헬스체크를 확인합니다.
+1. GitHub 저장소를 clone 합니다.
+2. Termux에서 `./scripts/install_termux_requirements.sh`를 실행합니다.
+3. `app-apk/`에 복사된 APK 3개를 설치합니다.
+4. Android 설정에서 브릿지앱과 Termux의 알림 권한을 켭니다.
+5. Android 설정에서 브릿지앱과 Termux를 배터리 최적화 예외로 둡니다.
+6. `./scripts/run_termux_server.sh`로 백엔드를 띄운 뒤 `./scripts/check_termux_runtime.sh`로 헬스체크를 확인합니다.
+
+APK 설치 순서는 아래처럼 잡으면 된다.
+
+1. `app-apk/kakao-bridge-app-debug.apk`
+2. `app-apk/com.termux_1022.apk`
+3. `app-apk/com.termux.api_1002.apk`
+
+설치 후에는 다음을 확인한다.
+
+1. 브릿지앱 알림 권한이 켜져 있는지 확인한다.
+2. Termux 알림 권한이 켜져 있는지 확인한다.
+3. 브릿지앱과 Termux가 배터리 최적화 제외인지 확인한다.
+4. Termux에서 `./scripts/check_termux_runtime.sh`가 `OK`를 내는지 확인한다.
 
 ## 봇 문서
 
